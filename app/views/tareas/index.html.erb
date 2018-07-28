@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <% @tareas.each_slice(4) do |row| %>
+      <% row.each do |t| %>
+        <div class="col">
+          <div class="card">
+            <%= image_tag t.photo, class:'card-img-top' %>
+            <div class="body">
+              <h5> <%= t.name %> </h5>
+              
+              <%= link_to "Completar", completed_path(t), class:'btn btn-primary' %>
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="w-100" style="margin-top:20px"></div>
+    <% end %>
+  </div>
+</div>
